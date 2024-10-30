@@ -1,55 +1,46 @@
-# Análisis de Calidad del Agua por Regiones
+Water Quality Analysis by Region
+This project is a Python program that performs a regional analysis of water quality using well sample data stored in a CSV file. The program generates graphs related to the quality of potable and non-potable water based on the analyzed characteristics.
 
-Este proyecto es un programa escrito en Python que realiza el análisis de la calidad del agua por regiones, utilizando datos de muestras de pozos almacenados en un archivo CSV. El programa genera gráficos relacionados con la calidad del agua potable y no potable, según las características analizadas.
+Description
+The program analyzes water quality based on various parameters, such as:
 
-## Autor
-- Pablo Lizama
+Turbidity
+Disinfection
+Microbiology
+Based on the results, it classifies the wells into two categories:
 
-## Versión
-- Python 3.7.1
+Potable Wells
+Non-Potable Wells
+Input
+CSV File: The program requires an input file in CSV format that contains data on well samples.
 
-## Descripción
+The data should be organized with the following columns:
 
-El programa analiza la calidad del agua en base a distintos parámetros como:
-- Turbiedad
-- Desinfección
-- Microbiología
+Column 1: Region
+Column 2: Well
+Column 3: Number of Samples
+Column 4: Turbidity (NTU)
+Column 5: Disinfection (mg/L)
+Column 6: Microbiology (col/100ml)
+Output
+The program will generate a list of wells that meet potable water standards and another list of wells that do not.
+It will also create graphs based on the obtained results.
+Project Structure
+The program is organized into three main sections:
 
-A partir de los resultados, clasifica los pozos en dos categorías:
-1. **Pozos Potables**
-2. **Pozos No Potables**
+Function Definitions: Contains functions to:
 
-### Entrada
-- **Archivo CSV**: El programa requiere un archivo de entrada en formato CSV que contiene datos de muestras de pozos.
-  
-  Los datos deben estar organizados con las siguientes columnas:
-  - Columna 1: Región
-  - Columna 2: Pozo
-  - Columna 3: Cantidad de Muestras
-  - Columna 4: Turbiedad (NTU)
-  - Columna 5: Desinfección (mg/L)
-  - Columna 6: Microbiología (col/100ml)
+Read and process the CSV file.
+Sort the data by well and region.
+Analyze turbidity, disinfection, and microbiology parameters.
+Main Block: Executes the functions, performs a complete analysis of the data, and returns the results.
 
-### Salida
-- El programa generará una lista de pozos que cumplen con los requisitos de agua potable y otra lista de pozos que no cumplen.
-- También se realizarán gráficas en base a los resultados obtenidos.
+Main Functions:
 
-## Estructura del Proyecto
-
-El programa se organiza en tres bloques principales:
-
-1. **Definición de Funciones**: Contiene funciones para:
-   - Leer y procesar el archivo CSV.
-   - Ordenar los datos por pozo y región.
-   - Analizar los parámetros de turbiedad, desinfección y microbiología.
-   
-2. **Bloque Principal**: Ejecuta las funciones, realiza el análisis completo de los datos y devuelve los resultados.
-
-3. **Funciones Principales**:
-   - `leerArchivo(ubicacion)`: Lee el archivo CSV y devuelve los datos como lista.
-   - `ordenarPorPozo(listaDeListas)`: Ordena los datos por pozo.
-   - `ordenarPorRegion(listaOrdenada)`: Ordena los datos por región.
-   - `analizarTurbiedad(listaOrdenada2, listaMuestras)`: Analiza la turbiedad del agua.
-   - `analizarDesinfeccion(listaOrdenada2, listaMuestras)`: Analiza los niveles de desinfección.
-   - `analizarMicrobiologico(listaOrdenada2, listaMuestras)`: Analiza los parámetros microbiológicos.
-   - `listaDefinitiva(listaTurbiedad, listaDesinfeccion, listaMicrobiologico)`: Genera la lista final de pozos potables y no potables.
+leerArchivo(ubicacion): Reads the CSV file and returns the data as a list.
+ordenarPorPozo(listaDeListas): Sorts the data by well.
+ordenarPorRegion(listaOrdenada): Sorts the data by region.
+analizarTurbiedad(listaOrdenada2, listaMuestras): Analyzes water turbidity.
+analizarDesinfeccion(listaOrdenada2, listaMuestras): Analyzes disinfection levels.
+analizarMicrobiologico(listaOrdenada2, listaMuestras): Analyzes microbiological parameters.
+listaDefinitiva(listaTurbiedad, listaDesinfeccion, listaMicrobiologico): Generates the final list of potable and non-potable wells.
